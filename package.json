@@ -2,12 +2,12 @@
   "name": "escook-translate",
   "displayName": "escook-translate",
   "description": "单词翻译插件",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.71.0"
   },
   "categories": [
-    "Other"
+    "translate"
   ],
   "activationEvents": [
     "onCommand:escook-translate.translate",

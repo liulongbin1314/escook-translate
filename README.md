@@ -1,65 +1,27 @@
-# escook-translate README
+# escook-translate
 
-This is the README for your extension "escook-translate". After writing up a brief description, we recommend including the following sections.
+escook-translate 是一个简洁高效的单词翻译插件，可以辅助程序员对单词进行中英互译。如果你正在为变量的英文命名而发愁，那么强烈推荐您安装使用此插件，3 步搞定变量命名：
+
+1. 定义中文变量名，并选中它
+
+2. 摁下中英翻译的快捷键（Ctrl + Alt + X）
+
+3. 从提供的英文变量名列表中，选择合适的单词，轻松把中文变量名替换为英文变量名
+
+> 此外，本插件还支持把英文单词翻译为中文哦~，您只需要记住 Ctrl + Alt + X 快捷键即可（Mac 系统对应的快捷键是 Cmd + Alt + X）！
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+![preview.gif](images/preview.gif)
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
-
 ### 1.0.0
 
-Initial release of ...
+本插件的第 1 版正式发布，支持中英单词互译
 
-### 1.0.1
+1. Windows 系统，中英互译的快捷键为（Ctrl + Alt + X）
 
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+2. MacOS 系统，中英互译的快捷键为（Cmd + Alt + X）
 
 **Enjoy!**
