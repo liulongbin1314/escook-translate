@@ -24,6 +24,6 @@
 
 1. Windows 系统，中英互译的快捷键为（Ctrl + Alt + X）
 
-2. MacOS 系统，中英互译的快捷键为（Cmd + Alt + X）
+2. MacOS 系统，中英互译的快捷键为（Command(⌘) + Option(⌥) + X）
 
 **Enjoy!**
