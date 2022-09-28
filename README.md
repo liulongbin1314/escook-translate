@@ -14,9 +14,14 @@
 
 ## Features
 
-![preview.gif](images/preview.gif)
+![preview.gif](https://www.escook.cn/vuebase/pics/escook-translate_preview.gif)
 
 ## Release Notes
+
+### 1.1.0
+由于 Google 翻译的 API 在国内极度不稳定，所以把翻译 API 更新为 Bing 翻译。
+
+提高了翻译效率，降低了翻译失败后导致 “escook-translate:ERROR_1 connect ETIMEDOUT xxx” 报错的情况。
 
 ### 1.0.0
 

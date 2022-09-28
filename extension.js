@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode')
-const axios = require('axios')
+const { translate } = require('bing-translate-api')
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -28,10 +28,10 @@ function activate(context) {
     let transResult
     if (/[\u4e00-\u9fa5]/.test(value)) {
       // 中文 → 英文
-      transResult = showTranslateResult(value, 'zh-cn', 'en')
+      transResult = showTranslateResult(value, 'zh-Hans', 'en')
     } else {
       // 英文 → 中文
-      transResult = showTranslateResult(value, 'en', 'zh-cn')
+      transResult = showTranslateResult(value, 'en', 'zh-Hans')
     }
 
     // 获取到转换的结果
@@ -57,10 +57,9 @@ function deactivate() {}
 // 翻译单词，并展示翻译的结果
 async function showTranslateResult(kw, sourceLang, targetLang) {
   try {
-    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&q=${encodeURI(kw)}`
-    const { data: res } = await axios.get(url)
+    // const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&q=${encodeURI(kw)}`
+    const { translation: transResult } = await translate(kw, sourceLang, targetLang, false)
 
-    const transResult = res[0][0][0]
     // 要展示的结果
     const items = []
 
@@ -105,7 +104,7 @@ async function showTranslateResult(kw, sourceLang, targetLang) {
     // 展示可选项，并通过 .then 获取到用户选中项
     return vscode.window.showQuickPick(items)
   } catch (err) {
-    vscode.window.showErrorMessage('escook-translate:ERROR_1 ' + err.message)
+    vscode.window.showErrorMessage('escook-translate:ERROR_1 翻译失败，请稍后再试~ ' + err.message)
   }
 }
 
