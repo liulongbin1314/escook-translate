@@ -1,6 +1,11 @@
 # Change Log
 
+### 1.1.1
+
+更新了翻译插件的核心依赖版本至 v2.8.0，从而解决了翻译接口调用失败的问题。
+
 ### 1.1.0
+
 由于 Google 翻译的 API 在国内极度不稳定，所以把翻译 API 更新为 Bing 翻译。
 
 提高了翻译效率，降低了翻译失败后导致 “escook-translate:ERROR_1 connect ETIMEDOUT xxx” 报错的情况。
