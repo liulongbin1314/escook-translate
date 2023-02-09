@@ -3,6 +3,9 @@
 const vscode = require('vscode')
 const { translate } = require('bing-translate-api')
 
+// 创建翻译插件的状态栏提示
+let transStatusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left, 0)
+
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 
@@ -48,7 +51,11 @@ function activate(context) {
     edit.replace(editor.selection, targetText)
   })
 
-  context.subscriptions.push(disposable, replaceDisposable)
+  // 设置状态栏的提示消息
+  transStatusBarItem.text = '$(loading~spin)单词翻译中'
+  transStatusBarItem.tooltip = '单词翻译中，请稍等...'
+
+  context.subscriptions.push(disposable, replaceDisposable, transStatusBarItem)
 }
 
 // this method is called when your extension is deactivated
@@ -57,7 +64,8 @@ function deactivate() {}
 // 翻译单词，并展示翻译的结果
 async function showTranslateResult(kw, sourceLang, targetLang) {
   try {
-    // const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&q=${encodeURI(kw)}`
+    // 展示状态栏提示
+    transStatusBarItem.show()
     const { translation: transResult } = await translate(kw, sourceLang, targetLang, false)
 
     // 要展示的结果
@@ -105,6 +113,9 @@ async function showTranslateResult(kw, sourceLang, targetLang) {
     return vscode.window.showQuickPick(items)
   } catch (err) {
     vscode.window.showErrorMessage('escook-translate:ERROR_1 翻译失败，请稍后再试~ ' + err.message)
+  } finally {
+    // 隐藏状态栏提示
+    transStatusBarItem.hide()
   }
 }
 
