@@ -52,7 +52,7 @@ function activate(context) {
   })
 
   // 设置状态栏的提示消息
-  transStatusBarItem.text = '$(loading~spin)单词翻译中'
+  transStatusBarItem.text = '$(sync~spin)单词翻译中'
   transStatusBarItem.tooltip = '单词翻译中，请稍等...'
 
   context.subscriptions.push(disposable, replaceDisposable, transStatusBarItem)

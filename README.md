@@ -14,9 +14,14 @@
 
 ## Features
 
-![preview.gif](https://www.escook.cn/vuebase/pics/escook-translate_preview.gif)
+![preview.gif](https://www.escook.cn/wp-content/uploads/2024/01/preview.gif)
 
 ## Release Notes
+
+### 1.2.1
+
+1. 修改了状态栏底部的 loading 图标。
+2. 更新了翻译插件的核心依赖版本至 v3.0.0。
 
 ### 1.2.0
 
